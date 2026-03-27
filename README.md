@@ -2,10 +2,10 @@
 This repo contains the CMS backend for [hulen.no](hulen.no). It is made with (sanity.io)[sanity.io], which delivers and manages content for the frontend application in a separate repository (found [here](https://github.com/Stiftelsen-Hulen/hulen_frontend/)).
 
 Sanity CMS relies on npm, typescript and react. Currently this repo uses:
-- Node 20+
-- React 18+
-- Typescript 4+
-- Sanity 4+
+- Node 22+
+- React 19+
+- Typescript 5+
+- Sanity 5+
 
 ## Getting started
 
