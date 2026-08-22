@@ -1,6 +1,7 @@
 import { defineConfig, Rule } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
+import { documentInternationalization } from '@sanity/document-internationalization'
 import { schemaTypes } from './schemas'
 
 export const supportedLanguages = [
@@ -98,7 +99,11 @@ export default defineConfig({
 
   plugins: [
     structureTool(),
-    visionTool()
+    visionTool(),
+    documentInternationalization({
+      supportedLanguages: supportedLanguages.map(({ id, title }) => ({ id, title })),
+      schemaTypes: ['availabilityPage'],
+    }),
   ],
 
   schema: {

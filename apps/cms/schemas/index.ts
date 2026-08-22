@@ -1,3 +1,4 @@
+import availabilityPage from './availabilityPage/availabilityPage'
 import contactPage from './contactPage/contactPage'
 import footer from './footer/footer'
 import benefitsSection from './joinUsPage/benefitsSection'
@@ -20,6 +21,7 @@ import joinEmailForm from './joinUsPage/joinEmailForm'
 import joinEmailFormApi from './api/contactFormApi'
 
 export const schemaTypes = [
+  availabilityPage,
   navBar,
   navElement,
   pageContent,
