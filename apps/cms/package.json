@@ -1,9 +1,7 @@
 {
-  "name": "hulen_sanity_studio",
+  "name": "hulen_cms",
   "private": true,
-  "version": "2.0.0",
   "main": "package.json",
-  "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
@@ -12,9 +10,6 @@
     "deploy-graphql": "sanity graphql deploy",
     "login": "sanity login"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
     "@sanity/document-internationalization": "^4.1.1",
     "@sanity/vision": "^5.17.1",
@@ -32,11 +27,5 @@
     "eslint": "^9.39.4",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
   }
 }

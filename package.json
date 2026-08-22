@@ -1,0 +1,20 @@
+{
+  "name": "hulen.no",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.22.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "turbo": "^2.10.11"
+  }
+}
