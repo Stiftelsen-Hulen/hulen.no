@@ -6,6 +6,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <div hidden dangerouslySetInnerHTML={{ __html: '<!-- Update repository! -->' }} />
       <HulenPortableText genericSanityPageProps={data.locale} />
       {/* Commenting out the TikTok iframe, but leacving it available for later.
       <iframe
