@@ -87,6 +87,8 @@ The project is deployed in [Vercel](https://vercel.com).
 
 [Link to the webpage](https://hulen-frontend.vercel.app).
 
+"Skip deployment when there are no changes in the root directory" is enabled in Vercel, so commits that don't touch `apps/web` (e.g. CMS-only changes) are not deployed. If a change to root config files (e.g. `pnpm-workspace.yaml`) is skipped, trigger a deployment manually.
+
 ## Technology descriptions
 
 ### Typescript basics
