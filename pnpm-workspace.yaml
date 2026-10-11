@@ -3,3 +3,10 @@ packages:
 allowBuilds:
   esbuild: true
   unrs-resolver: true
+# @img/sharp (via next) requires it to be listed. TODO: look into this
+# Normally we would ban install scripts from packages because those arent really needed and mostly used for nefarious purposes
+# But apparently next image kinda needs it to work locally, I dunno might not be an issue after packages are updated 11.10.2026 note
+  sharp: false 
+# Supply-chain protection (e.g. the Shai-Hulud worm): only install versions published at least 48h ago
+# This usually gives the ecosystem time to react if something malicious is applied
+minimumReleaseAge: 2880

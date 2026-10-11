@@ -6,47 +6,50 @@ This is an improved version of the frontend for [hulen.no](https://www.hulen.no)
 
 ## Getting Started
 
-1. Install Node.js 20.x (recommended). If you use a Node version manager (NVM), see https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/.
+1. Install Node.js 24.x and pnpm 11 (`npm i -g pnpm@11`).Its highly recommended to use NVM for node management instead of installing Node directly.  see https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/.
 
 2. Clone the repository
    ```bash
-   git clone https://github.com/Stiftelsen-Hulen/hulen_frontend.git
+   git clone https://github.com/Stiftelsen-Hulen/hulen.no.git
+   cd hulen.no
    ```
 3. Install the dependencies
    ```bash
-   npm install
+   pnpm install
    ```
 4. Steps to create the .env file with environment variables.
    - Copy the `.env.example` file
      ```bash
-        cp .env.example .env
+        cp apps/web/.env.example apps/web/.env
      ```
    - Edit the `.env` file and replace the placeholders with the appropriate credentials.
      1. NEXT_PUBLIC_SANITY_PROJECT_ID: Log in to [Sanity.io](https://www.sanity.io), navigate to the **Projects**, select the **Hulen** project and copy the **PROJECT ID**.
      2. NEXT_PUBLIC_SANITY_DATASET: In the **Project Dashboard**, go to **Datasets** and use the title of the chosen dataset.
 5. Run the project
    ```bash
-   npm run dev
+   pnpm --filter web dev
    ```
 6. Open http://localhost:3000 with your browser to see the result.
 
 ## Commands
 
+Run from the repository root:
+
 ```bash
 # Dev server
-npm run dev
+pnpm --filter web dev
 
 # Production
-npm run build
-npm run start
+pnpm --filter web build
+pnpm --filter web start
 
 # Linting (ESLint)
-npm run lint
-npm run lint:fix
+pnpm --filter web lint
+pnpm --filter web lint:fix
 
 # Formatting (Prettier)
-npm run format
-npm run format:check
+pnpm --filter web format
+pnpm --filter web format:check
 ```
 
 ## Technologies used

@@ -12,39 +12,40 @@
         "format:check": "prettier . --check"
     },
     "dependencies": {
-        "@emotion/react": "^11.14.0",
-        "@emotion/server": "^11.11.0",
-        "@emotion/styled": "^11.14.1",
-        "@mui/icons-material": "^6.5.0",
-        "@mui/material": "^6.5.0",
-        "@portabletext/react": "^6.0.3",
-        "@portabletext/types": "^4.0.2",
-        "@sanity/client": "^7.20.0",
-        "intl-tel-input": "^26.9.1",
+        "@emotion/cache": "11.14.0",
+        "@emotion/react": "11.14.0",
+        "@emotion/server": "11.11.0",
+        "@emotion/styled": "11.14.1",
+        "@mui/icons-material": "6.5.0",
+        "@mui/material": "6.5.0",
+        "@mui/system": "6.5.0",
+        "@portabletext/react": "6.0.3",
+        "@portabletext/types": "4.0.2",
+        "@sanity/client": "7.20.0",
+        "intl-tel-input": "26.9.1",
         "next": "16.2.2",
-        "node-cache": "^5.1.2",
-        "nodemailer": "^8.0.4",
+        "node-cache": "5.1.2",
+        "nodemailer": "8.0.4",
         "react": "19.2.4",
         "react-dom": "19.2.4"
     },
     "devDependencies": {
-        "@eslint/eslintrc": "^3.3.5",
-        "@eslint/js": "^9.39.4",
-        "@types/node": "^20.19.37",
-        "@types/nodemailer": "^7.0.11",
+        "@eslint/eslintrc": "3.3.5",
+        "@eslint/js": "9.39.4",
+        "@types/node": "20.19.37",
+        "@types/nodemailer": "7.0.11",
         "@types/react": "19.2.14",
         "@types/react-dom": "19.2.3",
-        "@typescript-eslint/eslint-plugin": "^8.57.2",
-        "@typescript-eslint/parser": "^8.57.2",
-        "eslint": "^9.39.4",
+        "@typescript-eslint/eslint-plugin": "8.57.2",
+        "@typescript-eslint/parser": "8.57.2",
+        "eslint": "9.39.4",
         "eslint-config-next": "16.2.2",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-unused-imports": "^4.4.1",
-        "prettier": "^3.8.1",
-        "typescript": "^5.9.3"
+        "eslint-config-prettier": "10.1.8",
+        "eslint-plugin-unused-imports": "4.4.1",
+        "prettier": "3.8.1",
+        "typescript": "5.9.3"
     },
-    "allowScripts": {
-        "sharp@0.34.5": true,
-        "unrs-resolver@1.11.1": true
+    "engines": {
+        "node": "24.x"
     }
 }
