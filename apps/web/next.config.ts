@@ -1,7 +1,79 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '/**',
+      },
+    ],
+  },
+  redirects: async () => {
+    return [
+      {
+        source: '/joinUs',
+        destination: '/frivillig',
+        permanent: true,
+      },
+      {
+        source: '/kalender',
+        destination: 'https://app.crescat.io/groups/aktive-interne',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/tickets',
+        destination: '/billetter',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/guardian',
+        destination: '/info/verge',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/info/guardian',
+        destination: '/info/verge',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/tech',
+        destination: '/info/tech',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/accessibility',
+        destination: '/info/tilgjengelighet',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/info/accessibility',
+        destination: '/info/tilgjengelighet',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/contact',
+        destination: '/kontakt',
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: '/about',
+        destination: '/om',
+        permanent: true,
+        basePath: false,
+      },
+    ]
+  },
+}
 
-export default nextConfig;
+export default nextConfig
