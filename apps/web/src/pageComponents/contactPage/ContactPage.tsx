@@ -1,5 +1,6 @@
 'use client'
 import { ContactCard } from '@/pageComponents/contactPage/components'
+import { hulen_yellow_text } from '@/styles'
 import type { SanityContactPageContent } from '@/types/sanity/contact'
 import { useLanguage } from '@/util/LanguageContext/LanguageContext'
 import { Box, Stack, Typography } from '@mui/material'
@@ -23,7 +24,7 @@ export const ContactPageContent = ({ content }: { content: SanityContactPageCont
         gap='1rem'
         sx={{
           '&>*': { margin: 0, textAlign: 'center' },
-          '& a': { color: 'white' },
+          '& a': { color: 'white', textDecorationColor: hulen_yellow_text },
         }}
       >
         <PortableText value={content.headerInfoBlock[language]} />
