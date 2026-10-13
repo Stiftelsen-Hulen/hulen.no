@@ -23,7 +23,6 @@ export const ContactPageContent = ({ content }: { content: SanityContactPageCont
         gap='1rem'
         sx={{
           '&>*': { margin: 0, textAlign: 'center' },
-          '& a': { color: 'white' },
         }}
       >
         <PortableText value={content.headerInfoBlock[language]} />
