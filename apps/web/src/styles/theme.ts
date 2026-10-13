@@ -83,10 +83,6 @@ const theme = createTheme({
         color: hulen_white_text,
         textDecorationColor: hulen_yellow_text,
       },
-      a: {
-        color: hulen_white_text,
-        textDecorationColor: hulen_yellow_text,
-      },
     },
     link: {
       color: hulen_white_text,
@@ -108,7 +104,16 @@ const theme = createTheme({
   },
 
   //If overriding specific components insert them here
+
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        a: {
+          color: hulen_white_text,
+          textDecorationColor: hulen_yellow_text,
+        },
+      },
+    },
     MuiIconButton: {
       styleOverrides: {
         root: {
