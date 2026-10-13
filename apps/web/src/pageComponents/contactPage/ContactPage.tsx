@@ -18,10 +18,17 @@ export const ContactPageContent = ({ content }: { content: SanityContactPageCont
 
   return (
     <Box>
-      <Stack alignItems={'center'} gap='1rem' sx={{ '&>*': { margin: 0, textAlign: 'center' } }}>
+      <Stack
+        alignItems={'center'}
+        gap='1rem'
+        sx={{
+          '&>*': { margin: 0, textAlign: 'center' },
+          '& a': { color: 'white' },
+        }}
+      >
         <PortableText value={content.headerInfoBlock[language]} />
         <Stack alignItems={'center'}>
-          <Typography variant='overline'>{content.booking.title[language]}</Typography>
+          {<Typography variant='overline'>{content.booking.title[language]}</Typography>}
           <Typography variant='link' component={'a'} href={`mailto:${content.booking.email}`}>
             {content.booking.email}
           </Typography>
