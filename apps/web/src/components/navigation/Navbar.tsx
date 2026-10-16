@@ -65,12 +65,13 @@ const NavigationBar = ({ navbarElements }: { navbarElements: SanityNavBarContent
   })
 
   return (
-    <StyledNavbarWrapper sx={{ flexDirection: isMobile ? 'column' : 'row' }}>
+    <StyledNavbarWrapper>
       <Link
         href={'/'}
         style={{
-          width: isMobile ? LOGO_WIDTH_BASE * 2 : LOGO_WIDTH_BASE * 2.3,
+          width: isMobile ? LOGO_WIDTH_BASE * 1 : LOGO_WIDTH_BASE * 2.3,
           flexShrink: 0,
+          paddingLeft: '1rem',
         }}
         aria-hidden
       >
@@ -79,7 +80,7 @@ const NavigationBar = ({ navbarElements }: { navbarElements: SanityNavBarContent
           alt={navbarElements.navbarLogo.altText[language]}
         />
       </Link>
-      <StyledNavLinksWrapper sx={{ justifyContent: { xs: 'center', md: 'end' } }}>
+      <StyledNavLinksWrapper sx={{ justifyContent: { xs: 'end', md: 'end' } }}>
         {isMobile ? (
           <IconButton
             onClick={() => setIsMenuDrawerOpen(true)}
