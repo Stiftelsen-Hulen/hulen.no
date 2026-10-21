@@ -18,6 +18,7 @@ const roboto = Roboto({
 export const hulen_black = '#000000'
 export const hulen_yellow = '#F7BD13'
 export const hulen_yellow_text = '#FFD000'
+export const hulen_white_text = '#f4f4f4'
 
 /** This is the global theme. Put styles that are global, i.e. stuff you want everywhere here.
  *  If adding new options (such as a new typography option, button variant), you will need to extend
@@ -79,12 +80,12 @@ const theme = createTheme({
       fontSize: '1.375rem',
       fontWeight: '300',
       '&>a': {
-        color: 'white',
+        color: hulen_white_text,
         textDecorationColor: hulen_yellow_text,
       },
     },
     link: {
-      color: 'white',
+      color: hulen_white_text,
       textDecorationColor: hulen_yellow_text,
     },
     menuLink: {
@@ -103,7 +104,16 @@ const theme = createTheme({
   },
 
   //If overriding specific components insert them here
+
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        a: {
+          color: hulen_white_text,
+          textDecorationColor: hulen_yellow_text,
+        },
+      },
+    },
     MuiIconButton: {
       styleOverrides: {
         root: {
@@ -322,7 +332,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '.indicator': {
-            color: 'white',
+            color: hulen_white_text,
             paddingBottom: '3px',
           },
         },
