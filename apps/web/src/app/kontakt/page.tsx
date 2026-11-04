@@ -1,5 +1,23 @@
 import { ContactPageContent } from '@/pageComponents/contactPage/ContactPage'
+import { getLanguageFromCookie } from '@/util/LanguageContext/LanguageCookie'
 import { getContactPageContent } from '@/util/sanity'
+
+export async function generateMetadata() {
+  const language = await getLanguageFromCookie()
+
+  if (language == "en") {
+    return { 
+      title: 'Kontakt oss | Hulen Bergen',
+      description: 'Kontaktinformasjon for booking, frivillighet og styret ved Hulen i Bergen.',
+    }
+  } else {
+    return { 
+      title: "Contact us | Hulen Bergen",
+      description: "Contact information for booking, volunteering and leadership at Hulen in Bergen"
+    }
+  }
+
+}
 
 export default async function ContactPage() {
   const data = await getContactPageContent()

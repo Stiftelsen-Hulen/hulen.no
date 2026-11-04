@@ -1,5 +1,21 @@
 import { JoinUsPageContent } from '@/pageComponents/joinUsPage'
+import { getLanguageFromCookie } from '@/util/LanguageContext/LanguageCookie'
 import { getJoinUsPageContent } from '@/util/sanity'
+
+export async function generateMetadata() {
+  const language = await getLanguageFromCookie()
+
+  if (language == "en") {
+    return {
+      title: "Volunteering | Hulen Bergen",
+    }
+  } else {
+    return { 
+      title: "Frivilig | Hulen Bergen",
+    }
+  }
+
+}
 
 export default async function JoinUsPage() {
   const data = await getJoinUsPageContent()

@@ -1,31 +1,21 @@
 import { NotFoundPageContent } from '@/pageComponents/notFoundPage'
-import { useLanguage } from '@/util/LanguageContext'
+import { getLanguageFromCookie } from '@/util/LanguageContext/LanguageCookie'
 import { get404PageContent } from '@/util/sanity'
 import { Metadata } from 'next'
 import { cookies } from 'next/headers'
+import { title } from 'process'
 
 export async function generateMetadata() {
-  const cookieStore = await cookies()
+  const language = await getLanguageFromCookie()
 
-  const metadata = {
-    "no": {
-      title: "Side ikke funnet | Hulen Bergen",
-    },
-
-    "en": {
+  if (language == "en") {
+    return {
       title: "Page not found | Hulen Bergen",
     }
-  }
-
-  const language = cookieStore.get("language")
-  if (!language) {
-    return metadata.no 
-  }
-
-  if (language.value === "no") {
-    return metadata.no
   } else {
-    return metadata.en
+    return {
+      title: "Side ikke funnet | Hulen Bergen",
+    }
   }
 
 }
