@@ -24,6 +24,52 @@ import type { LanguageOptions } from '@/types/language'
 
 const EmailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
+/*To override intlTelInput's css*/
+const PhoneInputWrapper = styled('div')(({ theme: _theme }) => ({
+  width: '100%',
+  marginTop: '4px',
+  '& .iti': {
+    width: '100%',
+  },
+  '& .iti * ': {
+    fontSize: '22px',
+    backgroundColor: hulen_black,
+    color: hulen_yellow_text,
+  },
+  '& .iti__tel-input': {
+    width: '100%',
+    padding: '16px 26px 16px 12px',
+    border: '0.5px solid ' + hulen_yellow_text,
+    borderRadius: '4px',
+    outline: 0,
+  },
+  // Trying to get border to behave as other inputs when in focus
+  // '& .iti__tel-input:focus': {
+  //   width: '100%',
+  //   height: '100%',
+  //   borderWidth: '3px',
+  //   borderColor: hulen_yellow_text,
+  //   padding: '16px 26px 16px 12px',
+  // },
+  '& .iti__country-container': {
+    marginLeft: '2px',
+  },
+  '& .iti__arrow': {
+    //* css triangle
+    borderTop: '4px solid ' + hulen_yellow_text,
+  },
+  '& .iti__arrow--up': {
+    borderBottom: '4px solid ' + hulen_yellow_text + 'A6', //trasparency
+  },
+  '& .iti__dropdown-content': {
+    border: '0.5px solid ' + hulen_yellow_text,
+  },
+  ' & .iti__search-input': {
+    borderBottom: '0.5px solid ' + hulen_yellow_text,
+    borderRadius: 0,
+  },
+}))
+
 /**
  * The layout for the benefit section on the Join us Page
  * @param param0
@@ -50,7 +96,7 @@ export const JoinEmailForm = ({
 
   const IsAPosition = (pos: string) => positions.map((p) => p.title[language]).indexOf(pos) > -1
 
-  let isValidPhoneNumber = false
+  const [isValidPhoneNumber, setPhoneNumberValidity] = useState(false)
   const [formData, setFormData] = useState({
     userName: '',
     userEmail: '',
@@ -138,52 +184,6 @@ export const JoinEmailForm = ({
     )
   }
 
-  /*To override intlTelInput's css*/
-  const PhoneInputWrapper = styled('div')(({ theme: _theme }) => ({
-    width: '100%',
-    marginTop: '4px',
-    '& .iti': {
-      width: '100%',
-    },
-    '& .iti * ': {
-      fontSize: '22px',
-      backgroundColor: hulen_black,
-      color: hulen_yellow_text,
-    },
-    '& .iti__tel-input': {
-      width: '100%',
-      padding: '16px 26px 16px 12px',
-      border: '0.5px solid ' + hulen_yellow_text,
-      borderRadius: '4px',
-      outline: 0,
-    },
-    // Trying to get border to behave as other inputs when in focus
-    // '& .iti__tel-input:focus': {
-    //   width: '100%',
-    //   height: '100%',
-    //   borderWidth: '3px',
-    //   borderColor: hulen_yellow_text,
-    //   padding: '16px 26px 16px 12px',
-    // },
-    '& .iti__country-container': {
-      marginLeft: '2px',
-    },
-    '& .iti__arrow': {
-      //* css triangle
-      borderTop: '4px solid ' + hulen_yellow_text,
-    },
-    '& .iti__arrow--up': {
-      borderBottom: '4px solid ' + hulen_yellow_text + 'A6', //trasparency
-    },
-    '& .iti__dropdown-content': {
-      border: '0.5px solid ' + hulen_yellow_text,
-    },
-    ' & .iti__search-input': {
-      borderBottom: '0.5px solid ' + hulen_yellow_text,
-      borderRadius: 0,
-    },
-  }))
-
   return (
     <Stack
       sx={{
@@ -259,8 +259,8 @@ export const JoinEmailForm = ({
             {content.phoneFormLabel[language]}
           </InputLabel>
           <IntlTelInput
-            onChangeNumber={(phoneNumber) => (formData.phoneNumber = phoneNumber)}
-            onChangeValidity={(boolean) => (isValidPhoneNumber = boolean)}
+            onChangeNumber={(phoneNumber) => setFormData((prev) => ({ ...prev, phoneNumber }))}
+            onChangeValidity={(boolean) => setPhoneNumberValidity(boolean)}
             initOptions={{
               i18n: phonePluginLanguage(language) /*Translate phone-form to client-language */,
               initialCountry: 'no',
